@@ -54,6 +54,9 @@ public class ReplicationAddonTiers {
         output.accept(ModRegistry.MATTER_TANK_TIER_7.get());
         output.accept(ModRegistry.MATTER_TANK_TIER_8.get());
         output.accept(ModRegistry.ADVANCED_REPLICATOR.get());
+        output.accept(ModRegistry.MEMORY_CHIP_TIER_1.get());
+        output.accept(ModRegistry.MEMORY_CHIP_TIER_2.get());
+        output.accept(ModRegistry.MEMORY_CHIP_TIER_3.get());
 
     }).build());
 

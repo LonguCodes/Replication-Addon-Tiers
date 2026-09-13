@@ -8,6 +8,7 @@ import net.minecraft.world.item.Items;
 import net.minecraft.world.level.ItemLike;
 import net.neoforged.neoforge.common.Tags;
 import net.neoforged.neoforge.common.conditions.IConditionBuilder;
+import org.mob.replication_addon_tiers.ReplicationAddonTiers;
 import org.mob.replication_addon_tiers.registry.ModRegistry;
 
 import java.util.concurrent.CompletableFuture;
@@ -112,6 +113,37 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .define('M', Tags.Items.INGOTS_IRON)
                 .unlockedBy("has_replicator", has(ReplicationRegistry.Blocks.REPLICATOR))
                 .save(recipeOutput);
+
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModRegistry.MEMORY_CHIP_TIER_1.get())
+                .pattern("CRC")
+                .pattern("RIR")
+                .pattern("CRC")
+                .define('C', ReplicationRegistry.Items.MEMORY_CHIP.get())
+                .define('R', ReplicationRegistry.Items.REPLICA_INGOT.get())
+                .define('I', ReplicationRegistry.Blocks.IDENTIFICATION_CHAMBER.block().get())
+                .unlockedBy(getHasName(ReplicationRegistry.Items.MEMORY_CHIP.get()), has(ReplicationRegistry.Items.MEMORY_CHIP.get()))
+                .save(recipeOutput);
+
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModRegistry.MEMORY_CHIP_TIER_2.get())
+                .pattern("CRC")
+                .pattern("RIR")
+                .pattern("CRC")
+                .define('C', ModRegistry.MEMORY_CHIP_TIER_1.get())
+                .define('R', ReplicationRegistry.Items.REPLICA_INGOT.get())
+                .define('I', ReplicationRegistry.Blocks.IDENTIFICATION_CHAMBER.block().get())
+                .unlockedBy(getHasName(ReplicationRegistry.Items.MEMORY_CHIP.get()), has(ReplicationRegistry.Items.MEMORY_CHIP.get()))
+                .save(recipeOutput);
+
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModRegistry.MEMORY_CHIP_TIER_3.get())
+                .pattern("CRC")
+                .pattern("RIR")
+                .pattern("CRC")
+                .define('C', ModRegistry.MEMORY_CHIP_TIER_2.get())
+                .define('R', ReplicationRegistry.Items.REPLICA_INGOT.get())
+                .define('I', ReplicationRegistry.Blocks.IDENTIFICATION_CHAMBER.block().get())
+                .unlockedBy(getHasName(ReplicationRegistry.Items.MEMORY_CHIP.get()), has(ReplicationRegistry.Items.MEMORY_CHIP.get()))
+                .save(recipeOutput);
+
 
     }
 

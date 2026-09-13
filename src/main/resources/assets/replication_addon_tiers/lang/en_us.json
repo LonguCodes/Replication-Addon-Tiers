@@ -1,5 +1,10 @@
 {
   "itemGroup.replication_addon_tiers": "Replication Tiers Addon",
+
+  "item.replication_addon_tiers.memory_chip_tier_1": "Memory Chip Tier 1",
+  "item.replication_addon_tiers.memory_chip_tier_2": "Memory Chip Tier 2",
+  "item.replication_addon_tiers.memory_chip_tier_3": "Memory Chip Tier 3",
+
   "block.replication_addon_tiers.matter_tank_tier_1": "Matter Tank Tier 1",
   "block.replication_addon_tiers.matter_tank_tier_2": "Matter Tank Tier 2",
   "block.replication_addon_tiers.matter_tank_tier_3": "Matter Tank Tier 3",

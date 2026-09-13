@@ -2,6 +2,7 @@ package org.mob.replication_addon_tiers.registry;
 
 import net.minecraft.core.registries.Registries;
 import net.minecraft.world.item.BlockItem;
+import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.entity.BlockEntityType;
 import net.neoforged.neoforge.registries.DeferredBlock;
 import net.neoforged.neoforge.registries.DeferredHolder;
@@ -11,10 +12,12 @@ import org.mob.replication_addon_tiers.ReplicationAddonTiers;
 import org.mob.replication_addon_tiers.block.*;
 import org.mob.replication_addon_tiers.block.custom.*;
 import org.mob.replication_addon_tiers.block.custom.matterTank.*;
+import org.mob.replication_addon_tiers.item.custom.*;
 
 public class ModRegistry {
     public static final DeferredRegister<BlockEntityType<?>> BLOCK_ENTITIES = DeferredRegister.create(Registries.BLOCK_ENTITY_TYPE, ReplicationAddonTiers.MOD_ID);
 
+    // Matter Tanks
     public static final DeferredBlock<MatterTankTier1Block> MATTER_TANK_TIER_1 = ReplicationAddonTiers.BLOCKS.register("matter_tank_tier_1", MatterTankTier1Block::new);
     public static final DeferredItem<BlockItem> MATTER_TANK_TIER_1_ITEM = ReplicationAddonTiers.ITEMS.registerSimpleBlockItem(MATTER_TANK_TIER_1);
 
@@ -39,8 +42,16 @@ public class ModRegistry {
     public static final DeferredBlock<MatterTankTier8Block> MATTER_TANK_TIER_8 = ReplicationAddonTiers.BLOCKS.register("matter_tank_tier_8", MatterTankTier8Block::new);
     public static final DeferredItem<BlockItem> MATTER_TANK_TIER_8_ITEM = ReplicationAddonTiers.ITEMS.registerSimpleBlockItem(MATTER_TANK_TIER_8);
 
+    // Memory Chips
+    public static final DeferredItem<Item> MEMORY_CHIP_TIER_1 = ReplicationAddonTiers.ITEMS.register("memory_chip_tier_1",
+            MemoryChipItemTier1::new);
+    public static final DeferredItem<Item> MEMORY_CHIP_TIER_2 = ReplicationAddonTiers.ITEMS.register("memory_chip_tier_2",
+            MemoryChipItemTier2::new);
+    public static final DeferredItem<Item> MEMORY_CHIP_TIER_3 = ReplicationAddonTiers.ITEMS.register("memory_chip_tier_3",
+            MemoryChipItemTier3::new);
 
 
+    // Replicator
     public static final DeferredBlock<AdvancedReplicatorBlock> ADVANCED_REPLICATOR = ReplicationAddonTiers.BLOCKS.register("advanced_replicator", AdvancedReplicatorBlock::new);
     public static final DeferredItem<BlockItem> ADVANCED_REPLICATOR_ITEM = ReplicationAddonTiers.ITEMS.registerSimpleBlockItem(ADVANCED_REPLICATOR);
 
