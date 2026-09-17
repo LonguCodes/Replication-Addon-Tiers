@@ -1,5 +1,8 @@
-// 1.21.1	2026-09-05T12:42:04.6104711	Loot Tables
+// 1.21.1	2026-09-17T20:02:14.511961	Loot Tables
+2104f95b45f9181a71edf58cf8bc98c252add4e0 data/replication_addon_tiers/loot_table/blocks/advanced_disintegrator.json
 3baec5d8d86f4b76223f82cb70624c771420b1ac data/replication_addon_tiers/loot_table/blocks/advanced_replicator.json
+3718f4c6c133b4528f2b83d0545c30fc8d37edb9 data/replication_addon_tiers/loot_table/blocks/elite_disintegrator.json
+fff27aa74b4d3f573e4195fc77809bf996957006 data/replication_addon_tiers/loot_table/blocks/elite_replicator.json
 640378238ed18e6865538482b2d040bd9738e057 data/replication_addon_tiers/loot_table/blocks/matter_tank_tier_1.json
 fdb73306b1cedff4841f60f9673754152c4837b1 data/replication_addon_tiers/loot_table/blocks/matter_tank_tier_2.json
 87880da20b2b46d9ce419bb55d3330dd08581666 data/replication_addon_tiers/loot_table/blocks/matter_tank_tier_3.json

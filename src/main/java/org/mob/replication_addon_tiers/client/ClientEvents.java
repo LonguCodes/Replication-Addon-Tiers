@@ -22,7 +22,7 @@ import net.neoforged.neoforge.client.model.SimpleModelState;
 import net.neoforged.neoforge.event.entity.player.ItemTooltipEvent;
 import org.joml.Matrix4f;
 import org.mob.replication_addon_tiers.Config;
-import org.mob.replication_addon_tiers.block.custom.AdvancedReplicatorBlockEntity;
+import org.mob.replication_addon_tiers.block.custom.*;
 import org.mob.replication_addon_tiers.block.custom.matterTank.*;
 import org.mob.replication_addon_tiers.client.render.*;
 import org.mob.replication_addon_tiers.registry.ModRegistry;
@@ -139,7 +139,10 @@ public class ClientEvents {
 
 
         EventManager.mod(EntityRenderersEvent.RegisterRenderers.class).process(event -> {
-            event.registerBlockEntityRenderer((BlockEntityType<? extends AdvancedReplicatorBlockEntity>)ModRegistry.ADVANCED_REPLICATOR_BE.get(), p_173571_ -> new AdvancedReplicatorRenderer());
+            event.registerBlockEntityRenderer((BlockEntityType<? extends AdvancedReplicatorBlockEntity>)ModRegistry.ADVANCED_REPLICATOR_BE.get(), context -> new AdvancedReplicatorRenderer());
+            event.registerBlockEntityRenderer((BlockEntityType<? extends EliteReplicatorBlockEntity>)ModRegistry.ELITE_REPLICATOR_BE.get(), context -> new EliteReplicatorRenderer());
+            event.registerBlockEntityRenderer((BlockEntityType<? extends AdvancedDisintegratorBlockEntity>)ModRegistry.ADVANCED_DISINTEGRATOR_BE.get(), AdvancedDisintegratorRenderer::new);
+            event.registerBlockEntityRenderer((BlockEntityType<? extends EliteDisintegratorBlockEntity>)ModRegistry.ELITE_DISINTEGRATOR_BE.get(), EliteDisintegratorRenderer::new);
             event.registerBlockEntityRenderer((BlockEntityType<? extends MatterTankTier1BlockEntity>) ModRegistry.MATTER_TANK_TIER_1_BE.get(), MatterTankTier1Renderer::new);
             event.registerBlockEntityRenderer((BlockEntityType<? extends MatterTankTier2BlockEntity>) ModRegistry.MATTER_TANK_TIER_2_BE.get(), MatterTankTier2Renderer::new);
             event.registerBlockEntityRenderer((BlockEntityType<? extends MatterTankTier3BlockEntity>) ModRegistry.MATTER_TANK_TIER_3_BE.get(), MatterTankTier3Renderer::new);
@@ -151,6 +154,9 @@ public class ClientEvents {
         }).subscribe();
         EventManager.mod(ModelEvent.BakingCompleted.class).process(event -> {
             AdvancedReplicatorRenderer.PLATE = bakeModel(ResourceLocation.fromNamespaceAndPath(Replication.MOD_ID, "block/replicator_plate"), event.getModelBakery());
+            EliteReplicatorRenderer.PLATE = bakeModel(ResourceLocation.fromNamespaceAndPath(Replication.MOD_ID, "block/replicator_plate"), event.getModelBakery());
+            AdvancedDisintegratorRenderer.BLADE = bakeModel(ResourceLocation.fromNamespaceAndPath(Replication.MOD_ID, "block/disintegrator_blade"), event.getModelBakery());
+            EliteDisintegratorRenderer.BLADE = bakeModel(ResourceLocation.fromNamespaceAndPath(Replication.MOD_ID, "block/disintegrator_blade"), event.getModelBakery());
         }).subscribe();
 //        EventManager.forge(RenderHighlightEvent.Block.class).process(ClientEvents::blockOverlayEvent).subscribe();
     }

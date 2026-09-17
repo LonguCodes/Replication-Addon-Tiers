@@ -1,7 +1,6 @@
 package org.mob.replication_addon_tiers.block;
 
 import com.buuz135.replication.ReplicationConfig;
-import com.buuz135.replication.ReplicationRegistry;
 import com.buuz135.replication.block.shapes.ReplicatorShapes;
 import com.hrznstudio.titanium.block.RotatableBlock;
 import com.hrznstudio.titanium.block_network.INetworkDirectionalConnection;
@@ -26,23 +25,23 @@ import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.VoxelShape;
 import org.jetbrains.annotations.NotNull;
 import org.mob.replication_addon_tiers.Config;
-import org.mob.replication_addon_tiers.block.custom.AdvancedReplicatorBlockEntity;
+import org.mob.replication_addon_tiers.block.custom.EliteReplicatorBlockEntity;
 import org.mob.replication_addon_tiers.registry.ModRegistry;
 
 import java.util.List;
 
-public class AdvancedReplicatorBlock extends RotatableBlock<AdvancedReplicatorBlockEntity> implements INetworkDirectionalConnection {
+public class EliteReplicatorBlock extends RotatableBlock<EliteReplicatorBlockEntity> implements INetworkDirectionalConnection {
     public static BooleanProperty HAS_ENCLOSURE = BooleanProperty.create("has_enclosure");
     public static BooleanProperty HAS_MOTOR = BooleanProperty.create("has_motor");
 
-    public AdvancedReplicatorBlock() {
-        super("advanced_replicator", Properties.ofFullCopy(Blocks.IRON_BLOCK), AdvancedReplicatorBlockEntity.class);
+    public EliteReplicatorBlock() {
+        super("elite_replicator", Properties.ofFullCopy(Blocks.IRON_BLOCK), EliteReplicatorBlockEntity.class);
         registerDefaultState(defaultBlockState().setValue(HAS_ENCLOSURE, false).setValue(HAS_MOTOR, false));
     }
 
     @Override
     public BlockEntityType.BlockEntitySupplier<?> getTileEntityFactory() {
-        return (pos, blockState) -> new AdvancedReplicatorBlockEntity(this, ModRegistry.ADVANCED_REPLICATOR_BE.get(), pos, blockState);
+        return (pos, blockState) -> new EliteReplicatorBlockEntity(this, ModRegistry.ELITE_REPLICATOR_BE.get(), pos, blockState);
     }
 
     @Override
@@ -126,7 +125,7 @@ public class AdvancedReplicatorBlock extends RotatableBlock<AdvancedReplicatorBl
 
     @Override
     public void appendHoverText(ItemStack stack, Item.TooltipContext context, List<Component> tooltipComponents, TooltipFlag tooltipFlag) {
-        tooltipComponents.add(Component.translatable("tooltip.replication_addon_tiers.replicator" , (Config.advancedReplicator * 2) , (ReplicationConfig.Replicator.MAX_PROGRESS * 2)));
+        tooltipComponents.add(Component.translatable("tooltip.replication_addon_tiers.replicator" , (Config.eliteReplicator * 2) , (ReplicationConfig.Replicator.MAX_PROGRESS * 2)));
         tooltipComponents.add(Component.translatable("tooltip.replication_addon_tiers.advanced_replicator_1"));
         super.appendHoverText(stack, context, tooltipComponents, tooltipFlag);
     }

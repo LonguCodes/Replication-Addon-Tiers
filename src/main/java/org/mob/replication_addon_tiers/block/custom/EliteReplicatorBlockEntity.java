@@ -6,7 +6,6 @@ import com.buuz135.replication.api.task.IReplicationTask;
 import com.buuz135.replication.api.task.ReplicationTask;
 import com.buuz135.replication.block.tile.ReplicationMachine;
 import com.buuz135.replication.calculation.ReplicationCalculation;
-import com.buuz135.replication.network.MatterNetwork;
 import com.hrznstudio.titanium.annotation.Save;
 import com.hrznstudio.titanium.api.IFactory;
 import com.hrznstudio.titanium.api.client.AssetTypes;
@@ -46,13 +45,13 @@ import net.neoforged.neoforge.capabilities.Capabilities;
 import net.neoforged.neoforge.items.ItemHandlerHelper;
 import org.jetbrains.annotations.NotNull;
 import org.mob.replication_addon_tiers.Config;
-import org.mob.replication_addon_tiers.client.gui.addon.AdvancedReplicatorCraftingAddon;
+import org.mob.replication_addon_tiers.client.gui.addon.EliteReplicatorCraftingAddon;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 
-public class AdvancedReplicatorBlockEntity extends ReplicationMachine<AdvancedReplicatorBlockEntity> implements IRedstoneReader {
+public class EliteReplicatorBlockEntity extends ReplicationMachine<EliteReplicatorBlockEntity> implements IRedstoneReader {
 
     public static final float LOWER_PROGRESS = 0.563f;
 
@@ -61,9 +60,9 @@ public class AdvancedReplicatorBlockEntity extends ReplicationMachine<AdvancedRe
     @Save
     private int action;
     @Save
-    private ProgressBarComponent<AdvancedReplicatorBlockEntity> progressBarComponent;
+    private ProgressBarComponent<EliteReplicatorBlockEntity> progressBarComponent;
     @Save
-    private SidedInventoryComponent<AdvancedReplicatorBlockEntity> output;
+    private SidedInventoryComponent<EliteReplicatorBlockEntity> output;
     @Save
     private String craftingTask;
     @Save
@@ -77,19 +76,19 @@ public class AdvancedReplicatorBlockEntity extends ReplicationMachine<AdvancedRe
     @Save
     private boolean isCurrentTaskAFailure;
 
-    private final int Max_Progress = Config.advancedReplicator * 2;
+    private final int Max_Progress = Config.eliteReplicator * 2;
 
 
-    public AdvancedReplicatorBlockEntity(BasicTileBlock<AdvancedReplicatorBlockEntity> base, BlockEntityType<?> blockEntityType, BlockPos pos, BlockState state) {
+    public EliteReplicatorBlockEntity(BasicTileBlock<EliteReplicatorBlockEntity> base, BlockEntityType<?> blockEntityType, BlockPos pos, BlockState state) {
         super(base, blockEntityType, pos, state);
         this.progress = ReplicationConfig.Replicator.MAX_PROGRESS;
         this.action = 1;
         this.isCurrentTaskAFailure = false;
         this.craftingStack = ItemStack.EMPTY;
-        this.progressBarComponent = new ProgressBarComponent<AdvancedReplicatorBlockEntity>(26, 25, 0, Max_Progress)
+        this.progressBarComponent = new ProgressBarComponent<EliteReplicatorBlockEntity>(26, 25, 0, Max_Progress)
                 .setBarDirection(ProgressBarComponent.BarDirection.VERTICAL_UP);
         addProgressBar(this.progressBarComponent);
-        this.output = (SidedInventoryComponent<AdvancedReplicatorBlockEntity>) new SidedInventoryComponent<AdvancedReplicatorBlockEntity>("output", 42, 63, 7, 0)
+        this.output = (SidedInventoryComponent<EliteReplicatorBlockEntity>) new SidedInventoryComponent<EliteReplicatorBlockEntity>("output", 42, 63, 7, 0)
                 .setColor(0xdea83c)
                 .setInputFilter((stack, integer) -> false)
                 .setColorGuiEnabled(false);
@@ -136,12 +135,12 @@ public class AdvancedReplicatorBlockEntity extends ReplicationMachine<AdvancedRe
     @Override
     public void initClient() {
         super.initClient();
-        addGuiAddonFactory(() -> new AdvancedReplicatorCraftingAddon(50, 30, this));
+        addGuiAddonFactory(() -> new EliteReplicatorCraftingAddon(50, 30, this));
 //        addGuiAddonFactory(() -> new AdvancedReplicatorMotorAddon(this, 7, 184));
     }
 
     @Override
-    public void serverTick(Level level, BlockPos pos, BlockState state, AdvancedReplicatorBlockEntity blockEntity) {
+    public void serverTick(Level level, BlockPos pos, BlockState state, EliteReplicatorBlockEntity blockEntity) {
         super.serverTick(level, pos, state, blockEntity);
         if (this.level.getGameTime() % 20 == 0) {
             var maxProgress = Max_Progress;
@@ -201,12 +200,12 @@ public class AdvancedReplicatorBlockEntity extends ReplicationMachine<AdvancedRe
 
     @NotNull
     @Override
-    public AdvancedReplicatorBlockEntity getSelf() {
+    public EliteReplicatorBlockEntity getSelf() {
         return this;
     }
 
     @Override
-    public void clientTick(Level level, BlockPos pos, BlockState state, AdvancedReplicatorBlockEntity blockEntity) {
+    public void clientTick(Level level, BlockPos pos, BlockState state, EliteReplicatorBlockEntity blockEntity) {
         super.clientTick(level, pos, state, blockEntity);
     }
 
@@ -253,7 +252,7 @@ public class AdvancedReplicatorBlockEntity extends ReplicationMachine<AdvancedRe
 
     @NotNull
     @Override
-    protected EnergyStorageComponent<AdvancedReplicatorBlockEntity> createEnergyStorage() {
+    protected EnergyStorageComponent<EliteReplicatorBlockEntity> createEnergyStorage() {
         return new EnergyStorageComponent<>(25000, 7, 25);
     }
 

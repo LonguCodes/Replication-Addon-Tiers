@@ -1,0 +1,24 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "G": {
+      "item": "replication:disintegrator"
+    },
+    "I": {
+      "item": "replication:replica_ingot"
+    },
+    "T": {
+      "item": "replication_addon_tiers:matter_tank_tier_1"
+    }
+  },
+  "pattern": [
+    "ITG",
+    "ITG",
+    "III"
+  ],
+  "result": {
+    "count": 1,
+    "id": "replication_addon_tiers:advanced_disintegrator"
+  }
+}

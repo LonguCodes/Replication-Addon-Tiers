@@ -8,6 +8,9 @@
     "replication_addon_tiers:matter_tank_tier_6",
     "replication_addon_tiers:matter_tank_tier_7",
     "replication_addon_tiers:matter_tank_tier_8",
-    "replication_addon_tiers:advanced_replicator"
+    "replication_addon_tiers:advanced_replicator",
+    "replication_addon_tiers:elite_replicator",
+    "replication_addon_tiers:advanced_disintegrator",
+    "replication_addon_tiers:elite_disintegrator"
   ]
 }

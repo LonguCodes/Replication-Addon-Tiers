@@ -114,6 +114,38 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .unlockedBy("has_replicator", has(ReplicationRegistry.Blocks.REPLICATOR))
                 .save(recipeOutput);
 
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModRegistry.ELITE_REPLICATOR.get())
+                .pattern("IP ")
+                .pattern("IRM")
+                .pattern("III")
+                .define('P', Items.PISTON)
+                .define('I', (ItemLike)ReplicationRegistry.Items.REPLICA_INGOT.get())
+                .define('R', ModRegistry.ADVANCED_REPLICATOR.get())
+                .define('M', Tags.Items.INGOTS_IRON)
+                .unlockedBy("has_replicator", has(ReplicationRegistry.Blocks.REPLICATOR))
+                .save(recipeOutput);
+
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModRegistry.ADVANCED_DISINTEGRATOR.get())
+                .pattern("ITG")
+                .pattern("ITG")
+                .pattern("III")
+                .define('T', ModRegistry.MATTER_TANK_TIER_1.get())
+                .define('I', ReplicationRegistry.Items.REPLICA_INGOT.get())
+                .define('G', ReplicationRegistry.Blocks.DISINTEGRATOR)
+                .unlockedBy("has_disintegrator", has(ReplicationRegistry.Blocks.DISINTEGRATOR))
+                .save(recipeOutput);
+
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModRegistry.ELITE_DISINTEGRATOR.get())
+                .pattern("ITG")
+                .pattern("ITG")
+                .pattern("III")
+                .define('T', ModRegistry.MATTER_TANK_TIER_2.get())
+                .define('I', ReplicationRegistry.Items.REPLICA_INGOT.get())
+                .define('G', ModRegistry.ADVANCED_DISINTEGRATOR.get())
+                .unlockedBy("has_disintegrator", has(ReplicationRegistry.Blocks.DISINTEGRATOR))
+                .save(recipeOutput);
+
+
         ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModRegistry.MEMORY_CHIP_TIER_1.get())
                 .pattern("CRC")
                 .pattern("RIR")

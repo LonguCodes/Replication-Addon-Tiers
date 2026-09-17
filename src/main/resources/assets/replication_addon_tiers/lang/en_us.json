@@ -14,7 +14,13 @@
   "block.replication_addon_tiers.matter_tank_tier_7": "Matter Tank Tier 7",
   "block.replication_addon_tiers.matter_tank_tier_8": "Matter Tank Tier 8",
   "block.replication_addon_tiers.advanced_replicator": "Advanced Replicator",
-  "tooltip.replication_addon_tiers.advanced_replicator": "Does Every replication task in %s ticks Instead of %s ticks in normal Replicator",
+  "block.replication_addon_tiers.elite_replicator": "Elite Replicator",
+
+  "block.replication_addon_tiers.advanced_disintegrator": "Advanced Disintegrator",
+  "block.replication_addon_tiers.elite_disintegrator": "Elite Disintegrator",
+
+  "tooltip.replication_addon_tiers.replicator": "Does Every replication task in %s ticks Instead of %s ticks in normal Replicator",
+  "tooltip.replication_addon_tiers.disintegrator": "Does Every disintegration task in %s ticks Instead of %s ticks in normal Disintegrator",
   "tooltip.replication_addon_tiers.priority.current": "Priority: %s",
   "tooltip.replication_addon_tiers.priority.increase": "Increase tank priority",
   "tooltip.replication_addon_tiers.priority.decrease": "Decrease tank priority",

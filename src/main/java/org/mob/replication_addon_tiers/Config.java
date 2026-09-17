@@ -18,7 +18,8 @@ public class Config {
     private static final ModConfigSpec.IntValue TANK_TIER_7 = BUILDER.comment("Multiplier for Matter Tank Tier 7").defineInRange("tankTier7", 128, 7, 1024);
     private static final ModConfigSpec.IntValue TANK_TIER_8 = BUILDER.comment("Multiplier for Matter Tank Tier 8").defineInRange("tankTier8", 256, 8, 1024);
 
-    private static final ModConfigSpec.IntValue ADVANCED_REPLICATOR = BUILDER.comment(" nummber of ticks it takes for Replication task \n it takes twice the ticks mentioned in the config inside game.").defineInRange("advancedReplicator", 4 , 1, 100);
+    private static final ModConfigSpec.IntValue ADVANCED_REPLICATOR = BUILDER.comment(" number of ticks it takes for Replication task \n it takes twice the ticks mentioned in the config inside game.").defineInRange("advancedReplicator", 4 , 1, 100);
+    private static final ModConfigSpec.IntValue ELITE_REPLICATOR = BUILDER.comment(" number of ticks it takes for Replication task\n it takes twice the ticks mentioned in the config inside game.").defineInRange("eliteReplicator", 1 , 1, 100);
 
     static final ModConfigSpec SPEC = BUILDER.build();
 
@@ -31,6 +32,7 @@ public class Config {
     public static int tankTier7;
     public static int tankTier8;
     public static int advancedReplicator;
+    public static int eliteReplicator;
 
 
     @SubscribeEvent
@@ -44,5 +46,6 @@ public class Config {
         tankTier7 = TANK_TIER_7.get();
         tankTier8 = TANK_TIER_8.get();
         advancedReplicator = ADVANCED_REPLICATOR.get();
+        eliteReplicator = ELITE_REPLICATOR.get();
     }
 }

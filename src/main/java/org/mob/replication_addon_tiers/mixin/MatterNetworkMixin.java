@@ -4,6 +4,7 @@ import com.buuz135.replication.network.MatterNetwork;
 import com.hrznstudio.titanium.block_network.element.NetworkElement;
 import net.minecraft.world.level.Level;
 import org.mob.replication_addon_tiers.block.custom.AdvancedReplicatorBlockEntity;
+import org.mob.replication_addon_tiers.block.custom.EliteReplicatorBlockEntity;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Shadow;
 import org.spongepowered.asm.mixin.injection.At;
@@ -27,6 +28,9 @@ public class MatterNetworkMixin {
             var tile = element.getLevel().getBlockEntity(element.getPos());
 
             if (tile instanceof AdvancedReplicatorBlockEntity) {
+                this.replicators.add(element);
+            }
+            if (tile instanceof EliteReplicatorBlockEntity) {
                 this.replicators.add(element);
             }
         }

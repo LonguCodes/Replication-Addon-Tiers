@@ -45,6 +45,9 @@ public class ReplicationAddonTiers {
     public static final DeferredRegister<CreativeModeTab> CREATIVE_MODE_TABS = DeferredRegister.create(Registries.CREATIVE_MODE_TAB, MOD_ID);
 
     public static final DeferredHolder<CreativeModeTab, CreativeModeTab> CREATIVE_TAB = CREATIVE_MODE_TABS.register("example_tab", () -> CreativeModeTab.builder().title(Component.translatable("itemGroup.replication_addon_tiers")).icon(() -> new ItemStack(ModRegistry.MATTER_TANK_TIER_1.get())).displayItems((parameters, output) -> {
+        output.accept(ModRegistry.MEMORY_CHIP_TIER_1.get());
+        output.accept(ModRegistry.MEMORY_CHIP_TIER_2.get());
+        output.accept(ModRegistry.MEMORY_CHIP_TIER_3.get());
         output.accept(ModRegistry.MATTER_TANK_TIER_1.get());
         output.accept(ModRegistry.MATTER_TANK_TIER_2.get());
         output.accept(ModRegistry.MATTER_TANK_TIER_3.get());
@@ -54,9 +57,10 @@ public class ReplicationAddonTiers {
         output.accept(ModRegistry.MATTER_TANK_TIER_7.get());
         output.accept(ModRegistry.MATTER_TANK_TIER_8.get());
         output.accept(ModRegistry.ADVANCED_REPLICATOR.get());
-        output.accept(ModRegistry.MEMORY_CHIP_TIER_1.get());
-        output.accept(ModRegistry.MEMORY_CHIP_TIER_2.get());
-        output.accept(ModRegistry.MEMORY_CHIP_TIER_3.get());
+        output.accept(ModRegistry.ELITE_REPLICATOR.get());
+        output.accept(ModRegistry.ADVANCED_DISINTEGRATOR.get());
+        output.accept(ModRegistry.ELITE_DISINTEGRATOR.get());
+
 
     }).build());
 
@@ -82,7 +86,7 @@ public class ReplicationAddonTiers {
                 }
 
                 return null;
-            }, new Block[]{ModRegistry.ADVANCED_REPLICATOR.get()});
+            }, new Block[]{ModRegistry.ADVANCED_REPLICATOR.get(),ModRegistry.ELITE_REPLICATOR.get(),ModRegistry.ADVANCED_DISINTEGRATOR.get(),ModRegistry.ELITE_DISINTEGRATOR.get()});
         }).subscribe();
         if (dist == Dist.CLIENT) {
             ClientEvents.init();

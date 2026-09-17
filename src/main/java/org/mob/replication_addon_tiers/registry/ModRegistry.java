@@ -55,6 +55,15 @@ public class ModRegistry {
     public static final DeferredBlock<AdvancedReplicatorBlock> ADVANCED_REPLICATOR = ReplicationAddonTiers.BLOCKS.register("advanced_replicator", AdvancedReplicatorBlock::new);
     public static final DeferredItem<BlockItem> ADVANCED_REPLICATOR_ITEM = ReplicationAddonTiers.ITEMS.registerSimpleBlockItem(ADVANCED_REPLICATOR);
 
+    public static final DeferredBlock<EliteReplicatorBlock> ELITE_REPLICATOR = ReplicationAddonTiers.BLOCKS.register("elite_replicator", EliteReplicatorBlock::new);
+    public static final DeferredItem<BlockItem> ELITE_REPLICATOR_ITEM = ReplicationAddonTiers.ITEMS.registerSimpleBlockItem(ELITE_REPLICATOR);
+
+    public static final DeferredBlock<AdvancedDisintegratorBlock> ADVANCED_DISINTEGRATOR = ReplicationAddonTiers.BLOCKS.register("advanced_disintegrator", AdvancedDisintegratorBlock::new);
+    public static final DeferredItem<BlockItem> ADVANCED_DISINTEGRATOR_ITEM = ReplicationAddonTiers.ITEMS.registerSimpleBlockItem(ADVANCED_DISINTEGRATOR);
+
+    public static final DeferredBlock<EliteDisintegratorBlock> ELITE_DISINTEGRATOR = ReplicationAddonTiers.BLOCKS.register("elite_disintegrator", EliteDisintegratorBlock::new);
+    public static final DeferredItem<BlockItem> ELITE_DISINTEGRATOR_ITEM = ReplicationAddonTiers.ITEMS.registerSimpleBlockItem(ELITE_DISINTEGRATOR);
+
     public static final DeferredHolder<BlockEntityType<?>, BlockEntityType<MatterTankTier1BlockEntity>> MATTER_TANK_TIER_1_BE = BLOCK_ENTITIES.register("matter_tank_tier_1",
             () -> {
                 var type = BlockEntityType.Builder.of(
@@ -128,6 +137,7 @@ public class ModRegistry {
             });
 
 
+    // Replicator
     public static final DeferredHolder<BlockEntityType<?>, BlockEntityType<AdvancedReplicatorBlockEntity>> ADVANCED_REPLICATOR_BE = BLOCK_ENTITIES.register("advanced_replicator",
             () -> {
                 var type = BlockEntityType.Builder.of(
@@ -137,4 +147,31 @@ public class ModRegistry {
                 return type;
             });
 
+    public static final DeferredHolder<BlockEntityType<?>, BlockEntityType<EliteReplicatorBlockEntity>> ELITE_REPLICATOR_BE = BLOCK_ENTITIES.register("elite_replicator",
+            () -> {
+                var type = BlockEntityType.Builder.of(
+                        (pos, state) -> new EliteReplicatorBlockEntity(ELITE_REPLICATOR.get(), null, pos, state),
+                        ELITE_REPLICATOR.get()
+                ).build(null);
+                return type;
+            });
+
+    // Disintegrator
+    public static final DeferredHolder<BlockEntityType<?>, BlockEntityType<AdvancedDisintegratorBlockEntity>> ADVANCED_DISINTEGRATOR_BE = BLOCK_ENTITIES.register("advanced_disintegrator",
+            () -> {
+                var type = BlockEntityType.Builder.of(
+                        (pos, state) -> new AdvancedDisintegratorBlockEntity(ADVANCED_DISINTEGRATOR.get(), null, pos, state),
+                        ADVANCED_DISINTEGRATOR.get()
+                ).build(null);
+                return type;
+            });
+
+    public static final DeferredHolder<BlockEntityType<?>, BlockEntityType<EliteDisintegratorBlockEntity>> ELITE_DISINTEGRATOR_BE = BLOCK_ENTITIES.register("elite_disintegrator",
+            () -> {
+                var type = BlockEntityType.Builder.of(
+                        (pos, state) -> new EliteDisintegratorBlockEntity(ELITE_DISINTEGRATOR.get(), null, pos, state),
+                        ELITE_DISINTEGRATOR.get()
+                ).build(null);
+                return type;
+            });
 }
