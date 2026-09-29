@@ -30,6 +30,9 @@ public class ModBlockLootProvider extends BlockLootSubProvider {
         dropSelf(ModRegistry.ELITE_REPLICATOR.get());
         dropSelf(ModRegistry.ADVANCED_DISINTEGRATOR.get());
         dropSelf(ModRegistry.ELITE_DISINTEGRATOR.get());
+        dropSelf(ModRegistry.ADVANCED_MATTER_NETWORK_PIPE.get());
+        dropSelf(ModRegistry.ELITE_MATTER_NETWORK_PIPE.get());
+        dropSelf(ModRegistry.ULTIMATE_MATTER_NETWORK_PIPE.get());
 
     }
 

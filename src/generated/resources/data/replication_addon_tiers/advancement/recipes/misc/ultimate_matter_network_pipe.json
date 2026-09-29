@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_matter_network_pipe": {
+      "conditions": {
+        "items": [
+          {
+            "items": "replication:matter_network_pipe"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "replication_addon_tiers:ultimate_matter_network_pipe"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_matter_network_pipe"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "replication_addon_tiers:ultimate_matter_network_pipe"
+    ]
+  }
+}

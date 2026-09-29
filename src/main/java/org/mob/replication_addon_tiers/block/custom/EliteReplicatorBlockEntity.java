@@ -253,7 +253,7 @@ public class EliteReplicatorBlockEntity extends ReplicationMachine<EliteReplicat
     @NotNull
     @Override
     protected EnergyStorageComponent<EliteReplicatorBlockEntity> createEnergyStorage() {
-        return new EnergyStorageComponent<>(25000, 7, 25);
+        return new EnergyStorageComponent<>(100000, 7, 25);
     }
 
     private void replicateItem(){

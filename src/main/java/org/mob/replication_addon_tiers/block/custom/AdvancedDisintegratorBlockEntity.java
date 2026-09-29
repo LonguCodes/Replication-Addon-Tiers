@@ -15,6 +15,7 @@ import com.buuz135.replication.util.ReplicationTags;
 import com.hrznstudio.titanium.annotation.Save;
 import com.hrznstudio.titanium.block.BasicTileBlock;
 import com.hrznstudio.titanium.block.RotatableBlock;
+import com.hrznstudio.titanium.component.energy.EnergyStorageComponent;
 import com.hrznstudio.titanium.component.fluid.FluidTankComponent;
 import com.hrznstudio.titanium.component.inventory.InventoryComponent;
 import com.hrznstudio.titanium.component.inventory.SidedInventoryComponent;
@@ -250,5 +251,11 @@ public class AdvancedDisintegratorBlockEntity extends ReplicationMachine<Advance
             ++i;
         }
         compoundTag.put("queuedMatterStacks", queuedMatterStacks);
+    }
+
+
+    @Override
+    protected @NotNull EnergyStorageComponent<AdvancedDisintegratorBlockEntity> createEnergyStorage() {
+       return new EnergyStorageComponent<>(50000, 9, 28);
     }
 }

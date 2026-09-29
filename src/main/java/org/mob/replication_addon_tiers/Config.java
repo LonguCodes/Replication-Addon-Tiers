@@ -21,6 +21,10 @@ public class Config {
     private static final ModConfigSpec.IntValue ADVANCED_REPLICATOR = BUILDER.comment(" number of ticks it takes for Replication task \n it takes twice the ticks mentioned in the config inside game.").defineInRange("advancedReplicator", 4 , 1, 100);
     private static final ModConfigSpec.IntValue ELITE_REPLICATOR = BUILDER.comment(" number of ticks it takes for Replication task\n it takes twice the ticks mentioned in the config inside game.").defineInRange("eliteReplicator", 1 , 1, 100);
 
+    private static final ModConfigSpec.IntValue ADVANCED_MATTER_PIPE = BUILDER.comment("Advanced Matter Pipe Power Transfer Rate Multiplier").defineInRange("advancedMatterPipe", 4 , 1, 100);
+    private static final ModConfigSpec.IntValue ELITE_MATTER_PIPE = BUILDER.comment("Elite Matter Pipe Power Transfer Rate Multiplier").defineInRange("eliteMatterPipe", 16 , 1, 100);
+    private static final ModConfigSpec.IntValue ULTIMATE_MATTER_PIPE = BUILDER.comment("Ultimate Matter Pipe Power Transfer Rate Multiplier").defineInRange("ultimateMatterPipe", 64 , 1, 100);
+
     static final ModConfigSpec SPEC = BUILDER.build();
 
     public static int tankTier1;
@@ -33,6 +37,9 @@ public class Config {
     public static int tankTier8;
     public static int advancedReplicator;
     public static int eliteReplicator;
+    public static int advancedMatterPipe;
+    public static int eliteMatterPipe;
+    public static int ultimateMatterPipe;
 
 
     @SubscribeEvent
@@ -47,5 +54,8 @@ public class Config {
         tankTier8 = TANK_TIER_8.get();
         advancedReplicator = ADVANCED_REPLICATOR.get();
         eliteReplicator = ELITE_REPLICATOR.get();
+        advancedMatterPipe = ADVANCED_MATTER_PIPE.get();
+        eliteMatterPipe = ELITE_MATTER_PIPE.get();
+        ultimateMatterPipe = ULTIMATE_MATTER_PIPE.get();
     }
 }
