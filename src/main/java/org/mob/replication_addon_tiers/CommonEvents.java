@@ -9,5 +9,8 @@ public class CommonEvents {
         NBTManager.getInstance().scanTileClassForAnnotations(EliteReplicatorBlockEntity.class);
         NBTManager.getInstance().scanTileClassForAnnotations(AdvancedDisintegratorBlockEntity.class);
         NBTManager.getInstance().scanTileClassForAnnotations(EliteDisintegratorBlockEntity.class);
+        NBTManager.getInstance().scanTileClassForAnnotations(AdvancedMatterPipeBlockEntity.class);
+        NBTManager.getInstance().scanTileClassForAnnotations(EliteMatterPipeBlockEntity.class);
+        NBTManager.getInstance().scanTileClassForAnnotations(UltimateMatterPipeBlockEntity.class);
     }
 }

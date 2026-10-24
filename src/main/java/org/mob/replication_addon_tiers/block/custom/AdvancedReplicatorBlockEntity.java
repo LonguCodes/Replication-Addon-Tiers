@@ -255,7 +255,7 @@ public class AdvancedReplicatorBlockEntity extends ReplicationMachine<AdvancedRe
     @NotNull
     @Override
     protected EnergyStorageComponent<AdvancedReplicatorBlockEntity> createEnergyStorage() {
-        return new EnergyStorageComponent<>(25000, 7, 25);
+        return new EnergyStorageComponent<>(50000, 7, 25);
     }
 
     private void replicateItem(){

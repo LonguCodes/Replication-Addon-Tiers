@@ -176,6 +176,32 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .unlockedBy(getHasName(ReplicationRegistry.Items.MEMORY_CHIP.get()), has(ReplicationRegistry.Items.MEMORY_CHIP.get()))
                 .save(recipeOutput);
 
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModRegistry.ADVANCED_MATTER_NETWORK_PIPE.get(), 8)
+                .pattern("PPP")
+                .pattern("PIP")
+                .pattern("PPP")
+                .define('P', ReplicationRegistry.Blocks.MATTER_NETWORK_PIPE.block().get())
+                .define('I', Items.DIAMOND)
+                .unlockedBy(getHasName(ReplicationRegistry.Blocks.MATTER_NETWORK_PIPE.block().get()), has(ReplicationRegistry.Blocks.MATTER_NETWORK_PIPE.block().get()))
+                .save(recipeOutput);
+
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModRegistry.ELITE_MATTER_NETWORK_PIPE.get(), 8)
+                .pattern("PPP")
+                .pattern("PIP")
+                .pattern("PPP")
+                .define('P', ModRegistry.ADVANCED_MATTER_NETWORK_PIPE.get())
+                .define('I', Items.EMERALD)
+                .unlockedBy(getHasName(ReplicationRegistry.Blocks.MATTER_NETWORK_PIPE.block().get()), has(ReplicationRegistry.Blocks.MATTER_NETWORK_PIPE.block().get()))
+                .save(recipeOutput);
+
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModRegistry.ULTIMATE_MATTER_NETWORK_PIPE.get(), 8)
+                .pattern("PPP")
+                .pattern("PIP")
+                .pattern("PPP")
+                .define('P', ModRegistry.ELITE_MATTER_NETWORK_PIPE.get())
+                .define('I', Items.NETHERITE_INGOT)
+                .unlockedBy(getHasName(ReplicationRegistry.Blocks.MATTER_NETWORK_PIPE.block().get()), has(ReplicationRegistry.Blocks.MATTER_NETWORK_PIPE.block().get()))
+                .save(recipeOutput);
 
     }
 

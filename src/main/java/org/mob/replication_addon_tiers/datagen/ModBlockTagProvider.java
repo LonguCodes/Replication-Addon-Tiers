@@ -31,6 +31,9 @@ public class ModBlockTagProvider extends BlockTagsProvider {
                 .add(ModRegistry.ELITE_REPLICATOR.get())
                 .add(ModRegistry.ADVANCED_DISINTEGRATOR.get())
                 .add(ModRegistry.ELITE_DISINTEGRATOR.get())
+                .add(ModRegistry.ADVANCED_MATTER_NETWORK_PIPE.get())
+                .add(ModRegistry.ELITE_MATTER_NETWORK_PIPE.get())
+                .add(ModRegistry.ULTIMATE_MATTER_NETWORK_PIPE.get())
         ;
     }
 }

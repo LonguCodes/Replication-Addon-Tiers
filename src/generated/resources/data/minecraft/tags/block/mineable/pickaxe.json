@@ -11,6 +11,9 @@
     "replication_addon_tiers:advanced_replicator",
     "replication_addon_tiers:elite_replicator",
     "replication_addon_tiers:advanced_disintegrator",
-    "replication_addon_tiers:elite_disintegrator"
+    "replication_addon_tiers:elite_disintegrator",
+    "replication_addon_tiers:advanced_matter_network_pipe",
+    "replication_addon_tiers:elite_matter_network_pipe",
+    "replication_addon_tiers:ultimate_matter_network_pipe"
   ]
 }

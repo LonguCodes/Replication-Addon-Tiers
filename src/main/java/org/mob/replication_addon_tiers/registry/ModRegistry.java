@@ -64,6 +64,18 @@ public class ModRegistry {
     public static final DeferredBlock<EliteDisintegratorBlock> ELITE_DISINTEGRATOR = ReplicationAddonTiers.BLOCKS.register("elite_disintegrator", EliteDisintegratorBlock::new);
     public static final DeferredItem<BlockItem> ELITE_DISINTEGRATOR_ITEM = ReplicationAddonTiers.ITEMS.registerSimpleBlockItem(ELITE_DISINTEGRATOR);
 
+    // Matter pipe
+    public static final DeferredBlock<AdvancedMatterPipeBlock> ADVANCED_MATTER_NETWORK_PIPE = ReplicationAddonTiers.BLOCKS.register("advanced_matter_network_pipe", AdvancedMatterPipeBlock::new);
+    public static final DeferredItem<BlockItem> ADVANCED_MATTER_NETWORK_PIPE_ITEM = ReplicationAddonTiers.ITEMS.registerSimpleBlockItem(ADVANCED_MATTER_NETWORK_PIPE);
+
+    public static final DeferredBlock<EliteMatterPipeBlock> ELITE_MATTER_NETWORK_PIPE = ReplicationAddonTiers.BLOCKS.register("elite_matter_network_pipe", EliteMatterPipeBlock::new);
+    public static final DeferredItem<BlockItem> ELITE_MATTER_NETWORK_PIPE_ITEM = ReplicationAddonTiers.ITEMS.registerSimpleBlockItem(ELITE_MATTER_NETWORK_PIPE);
+
+    public static final DeferredBlock<UltimateMatterPipeBlock> ULTIMATE_MATTER_NETWORK_PIPE = ReplicationAddonTiers.BLOCKS.register("ultimate_matter_network_pipe", UltimateMatterPipeBlock::new);
+    public static final DeferredItem<BlockItem> ULTIMATE_MATTER_NETWORK_PIPE_ITEM = ReplicationAddonTiers.ITEMS.registerSimpleBlockItem(ULTIMATE_MATTER_NETWORK_PIPE);
+
+
+    // Matter tanks
     public static final DeferredHolder<BlockEntityType<?>, BlockEntityType<MatterTankTier1BlockEntity>> MATTER_TANK_TIER_1_BE = BLOCK_ENTITIES.register("matter_tank_tier_1",
             () -> {
                 var type = BlockEntityType.Builder.of(
@@ -176,4 +188,34 @@ public class ModRegistry {
                 ).build(null);
                 return type;
             });
+
+    // Matter pipe
+    public static final DeferredHolder<BlockEntityType<?>, BlockEntityType<AdvancedMatterPipeBlockEntity>> ADVANCED_MATTER_NETWORK_PIPE_BE = BLOCK_ENTITIES.register("advanced_matter_network_pipe",
+            () -> {
+                var type = BlockEntityType.Builder.of(
+                        (pos, state) -> new AdvancedMatterPipeBlockEntity(ADVANCED_MATTER_NETWORK_PIPE.get(), null, pos, state),
+                        ADVANCED_MATTER_NETWORK_PIPE.get()
+                ).build(null);
+                return type;
+            });
+
+    public static final DeferredHolder<BlockEntityType<?>, BlockEntityType<EliteMatterPipeBlockEntity>> ELITE_MATTER_NETWORK_PIPE_BE = BLOCK_ENTITIES.register("elite_matter_network_pipe",
+            () -> {
+                var type = BlockEntityType.Builder.of(
+                        (pos, state) -> new EliteMatterPipeBlockEntity(ELITE_MATTER_NETWORK_PIPE.get(), null, pos, state),
+                        ELITE_MATTER_NETWORK_PIPE.get()
+                ).build(null);
+                return type;
+            });
+
+    public static final DeferredHolder<BlockEntityType<?>, BlockEntityType<UltimateMatterPipeBlockEntity>> ULTIMATE_MATTER_NETWORK_PIPE_BE = BLOCK_ENTITIES.register("ulitmate_matter_network_pipe",
+            () -> {
+                var type = BlockEntityType.Builder.of(
+                        (pos, state) -> new UltimateMatterPipeBlockEntity(ULTIMATE_MATTER_NETWORK_PIPE.get(), null, pos, state),
+                        ULTIMATE_MATTER_NETWORK_PIPE.get()
+                ).build(null);
+                return type;
+            });
+
+
 }

@@ -16,9 +16,14 @@
   "block.replication_addon_tiers.advanced_replicator": "Advanced Replicator",
   "block.replication_addon_tiers.elite_replicator": "Elite Replicator",
 
+  "block.replication_addon_tiers.advanced_matter_network_pipe": "Advanced Matter Network Pipe",
+  "block.replication_addon_tiers.elite_matter_network_pipe": "Elite Matter Network Pipe",
+  "block.replication_addon_tiers.ultimate_matter_network_pipe": "Ultimate Matter Network Pipe",
+
   "block.replication_addon_tiers.advanced_disintegrator": "Advanced Disintegrator",
   "block.replication_addon_tiers.elite_disintegrator": "Elite Disintegrator",
 
+  "tooltip.replication_addon_tiers.matter_network_pipe": "Have %s transfer rate Instead of %s transfer rate in normal matter network pipes",
   "tooltip.replication_addon_tiers.replicator": "Does Every replication task in %s ticks Instead of %s ticks in normal Replicator",
   "tooltip.replication_addon_tiers.disintegrator": "Does Every disintegration task in %s ticks Instead of %s ticks in normal Disintegrator",
   "tooltip.replication_addon_tiers.priority.current": "Priority: %s",

@@ -143,6 +143,9 @@ public class ClientEvents {
             event.registerBlockEntityRenderer((BlockEntityType<? extends EliteReplicatorBlockEntity>)ModRegistry.ELITE_REPLICATOR_BE.get(), context -> new EliteReplicatorRenderer());
             event.registerBlockEntityRenderer((BlockEntityType<? extends AdvancedDisintegratorBlockEntity>)ModRegistry.ADVANCED_DISINTEGRATOR_BE.get(), AdvancedDisintegratorRenderer::new);
             event.registerBlockEntityRenderer((BlockEntityType<? extends EliteDisintegratorBlockEntity>)ModRegistry.ELITE_DISINTEGRATOR_BE.get(), EliteDisintegratorRenderer::new);
+            event.registerBlockEntityRenderer((BlockEntityType<? extends AdvancedMatterPipeBlockEntity>)ModRegistry.ADVANCED_MATTER_NETWORK_PIPE_BE.get(), AdvancedMatterPipeRenderer::new);
+            event.registerBlockEntityRenderer((BlockEntityType<? extends EliteMatterPipeBlockEntity>)ModRegistry.ELITE_MATTER_NETWORK_PIPE_BE.get(), EliteMatterPipeRenderer::new);
+            event.registerBlockEntityRenderer((BlockEntityType<? extends UltimateMatterPipeBlockEntity>)ModRegistry.ULTIMATE_MATTER_NETWORK_PIPE_BE.get(), UltimateMatterPipeRenderer::new);
             event.registerBlockEntityRenderer((BlockEntityType<? extends MatterTankTier1BlockEntity>) ModRegistry.MATTER_TANK_TIER_1_BE.get(), MatterTankTier1Renderer::new);
             event.registerBlockEntityRenderer((BlockEntityType<? extends MatterTankTier2BlockEntity>) ModRegistry.MATTER_TANK_TIER_2_BE.get(), MatterTankTier2Renderer::new);
             event.registerBlockEntityRenderer((BlockEntityType<? extends MatterTankTier3BlockEntity>) ModRegistry.MATTER_TANK_TIER_3_BE.get(), MatterTankTier3Renderer::new);
